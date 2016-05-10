@@ -48,4 +48,21 @@ describe('thermostat', function(){
       expect(thermostat.temperature).toBe(20);
     });
   });
+
+  describe("temperature colout", function(){
+    it("shows green if less than 18", function(){
+      thermostat.decreaseTemp(10);
+      expect(thermostat.colour()).toBe("green");
+    });
+
+    it("shows yellow if less than 25", function(){
+      expect(thermostat.colour()).toBe("yellow");
+    });
+
+    it("shows red if greater than 25", function(){
+      thermostat.powerSavingOff();
+      thermostat.increaseTemp(6);
+      expect(thermostat.colour()).toBe("red");
+    });
+  });
 });

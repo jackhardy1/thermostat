@@ -40,4 +40,14 @@ this.temperature = this.defaultTemp;
     return this.temperature - temp < this.minTemp;
   };
 
+  Thermostat.prototype.colour = function() {
+    if(this.temperature < 18) {
+      return("green");
+    } else if(this.temperature < 25) {
+      return("yellow");
+    } else {
+      return("red");
+    }
+  };
+
 }
