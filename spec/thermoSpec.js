@@ -78,4 +78,32 @@ describe('thermo', function() {
       expect(thermostat.temperature).toEqual(25);
     });
   });
+
+  describe('Colour', function() {
+    it('should be green below 18 degrees', function() {
+      var times = 3;
+      for(var i = 0; i < times; i++){
+        thermostat.decreaseTemperature();
+      }
+      expect(thermostat.colour()).toBe('green');
+    });
+
+    it('should be yellow between 18 and 24 degrees', function() {
+      expect(thermostat.colour()).toBe('yellow');
+    });
+
+    it('should be red above 24 degrees', function() {
+      var times = 5;
+      for(var i = 0; i < times; i++){
+        thermostat.increaseTemperature();
+      }
+      expect(thermostat.colour()).toBe('red');
+    });
+  });
+
+  describe('Get temperature', function(){
+    it('Returns the current temperature', function() {
+      expect(thermostat.getTemperature()).toBe(20);
+    });
+  });
 });

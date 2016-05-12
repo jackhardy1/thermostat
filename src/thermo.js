@@ -36,6 +36,20 @@ Thermostat.prototype.resetTemp = function() {
   this.temperature = 20;
 };
 
+Thermostat.prototype.colour = function() {
+  if (this.temperature < 18) {
+    return 'green';
+  } else if (this.temperature < 25) {
+    return 'yellow';
+  } else {
+    return 'red';
+  }
+};
+
+Thermostat.prototype.getTemperature = function() {
+  return this.temperature;
+}
+
 Thermostat.prototype._isTooHot = function() {
   return this.temperature > this.maxTemp;
 };
