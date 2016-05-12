@@ -48,7 +48,7 @@ Thermostat.prototype.colour = function() {
 
 Thermostat.prototype.getTemperature = function() {
   return this.temperature;
-}
+};
 
 Thermostat.prototype._isTooHot = function() {
   return this.temperature > this.maxTemp;
