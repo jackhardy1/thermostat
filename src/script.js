@@ -1,3 +1,7 @@
+$.ajax({
+  url: 'api.openweathermap.org/data/2.5/weather?'
+});
+
 $(document).ready(function(){
   var thermostat = new Thermostat();
   updateTemp();
