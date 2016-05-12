@@ -1,5 +1,6 @@
 $(document).ready(function(){
   var thermostat = new Thermostat();
+  updateTemp();
 
   $('button').mouseenter(function(){
     $(this).fadeTo('fast',0.25);
@@ -8,31 +9,34 @@ $(document).ready(function(){
     $(this).fadeTo('slow',1);
   });
 
-  $('#temperature').text(thermostat.getTemperature());
 
   $('#up').click(function() {
     thermostat.increaseTemperature();
-    $('#temperature').text(thermostat.getTemperature());
+    updateTemp();
   });
 
   $('#down').click(function() {
     thermostat.decreaseTemperature();
-    $('#temperature').text(thermostat.getTemperature());
+    updateTemp();
   });
 
   $('#powerSaveOn').click(function() {
     thermostat.powerSaveOn();
-    $('#temperature').text(thermostat.getTemperature());
+    updateTemp();
   });
 
   $('#powerSaveOff').click(function() {
     thermostat.powerSaveOff();
-    $('#temperature').text(thermostat.getTemperature());
+    updateTemp();
   });
 
   $('#reset').click(function() {
     thermostat.resetTemp();
-    $('#temperature').text(thermostat.getTemperature());
+    updateTemp();
   });
 
+  function updateTemp(){
+    $('#temperature').text(thermostat.getTemperature());
+    $('#temperature').attr('class', thermostat.colour());
+  }
 });

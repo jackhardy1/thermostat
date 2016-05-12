@@ -2,3 +2,16 @@
   position:absolute;
   right: 1px;
 }*/
+
+h1.green {
+  background-color: green;
+  border:
+}
+
+h1.yellow {
+  background-color: yellow;
+}
+
+h1.red {
+  background-color: red;
+}
