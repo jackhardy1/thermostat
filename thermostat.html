@@ -1,10 +1,42 @@
 <head>
   <link rel="stylesheet" href="styles.css">
+<link href='https://fonts.googleapis.com/css?family=Cinzel:700' rel='stylesheet' type='text/css'>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.simpleWeather/3.1.0/jquery.simpleWeather.min.js"></script>
   <style>
   </style>
 </head>
 <body>
   <h1 id="temperature", class="temperature"></h1>
+
+  <select id="city">
+    <label for="city"> Select a city! </label>
+    <option value ="irkutsk" > Irkutsk </option>
+    <option value ="chernobyl" > Chernobyl </option>
+    <option value ="antartica" > Santa's home </option>
+    <option value ="kuwait City" > Hell </option>
+  </select>
+
+  <div id="weather">
+    <h2>Current temperature <span id="temp"> </span> </h2>
+    <h2> Sea level <div id="sea-level"> </div> </h2>
+    <h2> Wind speed <div id="wind-speed">  </div> </h2>
+  </div>
+
+  <div class>
+  <div class="icon thunder-storm">
+  <div class="cloud"></div>
+  <div class="lightning">
+    <div class="bolt"></div>
+    <div class="bolt"></div>
+  </div>
+</div>
+
+<div class="icon sunny">
+  <div class="sun">
+    <div class="rays"></div>
+  </div>
+</div>
+
   <section>
     <button id="up">+</button>
     <button id="down">-</button>
